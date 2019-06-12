@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="580.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Accounting">
+    <children>
+        <Label text="محاسبه درآمد">
+            <VBox.margin>
+                <Insets bottom="20.0" left="10.0" top="10.0" />
+            </VBox.margin>
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Separator prefWidth="200.0" />
+        <HBox prefHeight="76.0" prefWidth="800.0">
+            <children>
+                <VBox>
+                    <children>
+                        <HBox>
+                            <children>
+                                <CheckBox fx:id="historyCHB" mnemonicParsing="false" text="تاریخ">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </CheckBox>
+                                <Label text="از">
+                                    <HBox.margin>
+                                        <Insets left="15.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <DatePicker fx:id="fromDP" prefHeight="26.0" prefWidth="120.0">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </DatePicker>
+                            </children>
+                        </HBox>
+                        <HBox>
+                            <children>
+                                <Label text="تا">
+                                    <HBox.margin>
+                                        <Insets left="67.0" top="15.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <DatePicker fx:id="tillDP" prefHeight="26.0" prefWidth="120.0">
+                                    <HBox.margin>
+                                        <Insets left="6.0" top="10.0" />
+                                    </HBox.margin>
+                                </DatePicker>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Separator orientation="VERTICAL" prefHeight="200.0">
+                    <HBox.margin>
+                        <Insets left="5.0" />
+                    </HBox.margin>
+                </Separator>
+                <CheckBox fx:id="deviceCHB" mnemonicParsing="false" prefHeight="18.0" prefWidth="66.0" text="دستگاه">
+                    <HBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                    </HBox.margin>
+                </CheckBox>
+                <ListView fx:id="deviceLV" prefHeight="62.0" prefWidth="146.0">
+                    <HBox.margin>
+                        <Insets bottom="5.0" />
+                    </HBox.margin>
+                </ListView>
+                <Separator orientation="VERTICAL" prefHeight="200.0">
+                    <HBox.margin>
+                        <Insets left="5.0" />
+                    </HBox.margin>
+                </Separator>
+                <VBox>
+                    <children>
+                        <HBox>
+                            <children>
+                                <CheckBox fx:id="customerIdCHB" mnemonicParsing="false" prefHeight="18.0" prefWidth="60.0" text="مشتری" />
+                                <TextField fx:id="customerIdTF" prefHeight="26.0" prefWidth="141.0">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox>
+                            <children>
+                                <RadioButton fx:id="customerIdRB" mnemonicParsing="false" text="شماره اشتراک">
+                                    <HBox.margin>
+                                        <Insets top="10.0" />
+                                    </HBox.margin>
+                                </RadioButton>
+                                <RadioButton fx:id="customerNameRB" mnemonicParsing="false" text="نام و نام خانوادگی">
+                                    <HBox.margin>
+                                        <Insets left="5.0" top="10.0" />
+                                    </HBox.margin>
+                                </RadioButton>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Separator orientation="VERTICAL" prefHeight="200.0">
+                    <HBox.margin>
+                        <Insets left="5.0" />
+                    </HBox.margin>
+                </Separator>
+                <ButtonBar>
+                    <HBox.margin>
+                        <Insets left="50.0" />
+                    </HBox.margin>
+                    <buttons>
+                        <Button fx:id="calculateBTN" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" text="محاسبه" />
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0" />
+        <HBox prefHeight="36.0" prefWidth="800.0">
+            <children>
+                <Label text="درآمد محاسبه شده بر اساس پارامتر های تعین شده">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" top="10.0" />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="totalIncomeTF">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="8.0" />
+                    </HBox.margin>
+                </TextField>
+                <Label text="تومان">
+                    <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+        <TableView fx:id="table" prefHeight="454.0" prefWidth="800.0">
+            <columns>
+                <TableColumn fx:id="dateCL" prefWidth="112.800048828125" text="تاریخ" />
+                <TableColumn fx:id="deviceCL" minWidth="8.79998779296875" prefWidth="112.7999267578125" text="دستگاه" />
+                <TableColumn fx:id="startTimeCL" prefWidth="109.5999755859375" text="زمان شروع" />
+                <TableColumn fx:id="finishTimeCL" prefWidth="116.0" text="زمان پایان" />
+                <TableColumn fx:id="customerFNameCL" prefWidth="119.20001220703125" text="نام مشتری" />
+            <TableColumn fx:id="customerLNameCL" prefWidth="123.2000732421875" text="نام خانوادگی مشتری" />
+                <TableColumn fx:id="incomeCL" minWidth="0.0" prefWidth="109.5999755859375" text="درآمد" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
